@@ -19,6 +19,10 @@ jobs:
     - name: Make yt-dlp executable
       run: chmod +x ./yt-dlp
 
+    - name: Decrypt cookies file
+      run: |
+        openssl enc -d -aes-256-cbc -pbkdf2 -in cookies.enc -out cookies.txt -pass pass:${{ secrets.COOKIE_KEY }}
+
     - name: List available formats with cookies
       run: |
         ./yt-dlp --cookies cookies.txt --no-playlist -F "${{ inputs.video_url }}" > formats.txt
