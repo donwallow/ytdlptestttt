@@ -1,4 +1,4 @@
-# yt-dlp GitHub Action with Firebase Integration
+# YT Downloader Backend
 
 This repository demonstrates how to run [yt-dlp](https://github.com/yt-dlp/yt-dlp) inside a GitHub Action workflow and send the download results to Firebase Realtime Database.
 
