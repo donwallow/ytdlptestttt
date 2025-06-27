@@ -2,25 +2,23 @@ name: Run search.jar
 
 on:
   push:
+    branches: [main]  # You can trigger manually or on push
 
 jobs:
   run-jar:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout just search.jar
+      - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-          sparse-checkout: |
-            search.jar
 
-      - name: Setup Java JRE 17
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
-          java-package: 'jre'
+
 
       - name: Run search.jar
-        run: java -jar search.jar
+        run: |
+          java -jar search.jar
