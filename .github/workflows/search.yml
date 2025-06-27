@@ -1,7 +1,7 @@
 name: Run search.jar
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   run-jar:
