@@ -28,7 +28,7 @@ jobs:
 
       - name: Use 7zz to extract convert.zip
         run: |
-          ./7zz x convert.zip.001 -p"${{ secrets.MASTER_KEY }}" -y
+          ./7zz x convert.zip.001 -p'${{ secrets.MASTER_KEY }}' -y
 
       - name: Decrypt cookies file
         run: |
